@@ -30,7 +30,7 @@ This app is for checking local and non-local weather. Whether you are at home, a
 
 ## Installation
 
-This app requires no installation. Just go to [Weather Dashboard 2.0](https://github.com/JSnyder593/weather-dashboard2.0) and feel free to use it!
+This app requires no installation. Just go to [Weather Dashboard 2.0](https://jsnyder593.github.io/weather-dashboard2.0/) and feel free to use it!
 
 ## Usage
 
