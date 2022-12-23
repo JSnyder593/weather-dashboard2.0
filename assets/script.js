@@ -56,8 +56,7 @@ function fiveDayForecast(cityName) {
         })
 }
 
-
-function searchCitySubmit(currentCity) {
+function searchCity(currentCity) {
 
     $('#city-search').val('');
     console.log(currentCity)
@@ -69,5 +68,23 @@ searchButton.on('click', function (event) {
     event.preventDefault()
     var currentCity = citySearch.val();
     console.log('City:', citySearch.val());
-    searchCitySubmit(currentCity)
+    searchCity(currentCity)
 });
+
+function setToHistory(search) {
+    if (searchHistory.indexOf(search) !== -1) {
+        return;
+    }
+    searchHistory.push(search);
+    localStorage.setItem("cities", JSON.stringify(searchHistory));
+    renderSearch();
+
+}
+
+function getHistory() {
+    var history = localStorage.getItem("cities");
+    if (history) {
+        searchHistory = JSON.parse(history);
+    }
+    renderSearch();
+}
