@@ -62,6 +62,7 @@ function searchCity(currentCity) {
     console.log(currentCity)
     getApi(currentCity);
     fiveDayForecast(currentCity);
+    setHistory(currentCity);
 }
 
 searchButton.on('click', function (event) {
@@ -71,13 +72,13 @@ searchButton.on('click', function (event) {
     searchCity(currentCity)
 });
 
-function setToHistory(search) {
+function setHistory(search) {
     if (searchHistory.indexOf(search) !== -1) {
         return;
     }
     searchHistory.push(search);
     localStorage.setItem("cities", JSON.stringify(searchHistory));
-    renderSearch();
+    renderHistory();
 
 }
 
@@ -86,5 +87,28 @@ function getHistory() {
     if (history) {
         searchHistory = JSON.parse(history);
     }
-    renderSearch();
+    renderHistory();
 }
+
+function renderHistory(){
+    console.log(searchHistory)
+    listContainer.empty();
+    for (var i = searchHistory.length-1; i >= 0; i--) {
+        var btn = document.createElement("button");
+        btn.setAttribute("type", "button");
+        btn.classList.add("history-btn");
+        btn.setAttribute("data-search", searchHistory[i]);
+        btn.textContent = searchHistory[i];
+        listContainer.append(btn);
+    }
+}
+
+listContainer.on('click', function (event) {
+    var target = event.target;
+    console.log(target);
+    var savedCity = target.innerHTML;
+    console.log(savedCity);
+    searchCity(savedCity)
+})
+
+getHistory();

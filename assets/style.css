@@ -5,3 +5,8 @@ body{
 h1{
     background-color: burlywood;
 }
+
+button.history-btn{
+    background-color: rgb(120, 195, 197);
+    border-radius: 20%;
+}
