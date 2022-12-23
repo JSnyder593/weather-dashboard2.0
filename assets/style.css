@@ -10,3 +10,8 @@ button.history-btn{
     background-color: rgb(120, 195, 197);
     border-radius: 20%;
 }
+
+div.col-2.border.border-secondary.m-1.text-white.custom-card {
+    background-color: rgb(120, 195, 197);;
+
+}

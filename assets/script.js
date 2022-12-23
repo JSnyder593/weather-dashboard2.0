@@ -50,7 +50,7 @@ function fiveDayForecast(cityName) {
             for (var i = 2; i < fiveDayArray.length; i += 8) {
 
                 var currentForecastIndex = fiveDayArray[i];
-                fiveDayContainer.append(`<div class="col-2 border border-secondary m-1 bg-dark text-white"><p>${moment(currentForecastIndex.dt_txt).format('MMM DD, YYYY')}</p><p><img src="https://openweathermap.org/img/wn/${(currentForecastIndex.weather[0].icon)}.png"></img></p><p>Temp: <span>${currentForecastIndex.main.temp}°F</span></p><p>Wind: <span>${currentForecastIndex.wind.speed}MPH</span></p><p>Humidity: <span>${currentForecastIndex.main.humidity}%</span></p></div>`);
+                fiveDayContainer.append(`<div class="col-2 border border-secondary m-1 text-white custom-card"><p>${moment(currentForecastIndex.dt_txt).format('MMM DD, YYYY')}</p><p><img src="https://openweathermap.org/img/wn/${(currentForecastIndex.weather[0].icon)}.png"></img></p><p>Temp: <span>${currentForecastIndex.main.temp}°F</span></p><p>Wind: <span>${currentForecastIndex.wind.speed}MPH</span></p><p>Humidity: <span>${currentForecastIndex.main.humidity}%</span></p></div>`);
 
             }
         })
